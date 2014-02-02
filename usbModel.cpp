@@ -9,13 +9,14 @@ usbModel::usbModel(char device)
 {
 	sector_Key=sector_CheckSum=0;
 	char deviceName[20];
+	Device=device;
 	sprintf(deviceName,"\\\\.\\%c:",device);
 	UsbIO.OpenDevice(deviceName);
 }
 
-int usbModel::getUsbId(char *Serial )
+bool usbModel::getUsbId(char *Serial )
 {
-	return 0;
+	return GetUsbIdentification(Device,Serial);
 }
 
 bool usbModel::is_UKey(DWORD *pKey/* =NULL */, DWORD *pCheckSum/* =NULL */ )

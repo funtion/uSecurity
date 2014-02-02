@@ -5,8 +5,11 @@
 using namespace std;
 int main()
 {
+	char Ser[256];
 	usbModel t('H');
 
+
+/*
 	char Key[513],CheckSum[33];
 	char tKey[513],tCheck[33];
 	memset(Key,0x55,512);
@@ -17,8 +20,11 @@ int main()
 	cout<<t.getKey(tKey)<<endl;
 	cout<<t.getCheckSum(tCheck)<<endl;
 	tKey[512]=tCheck[32]=0;
-	cout<<tKey<<endl<<tCheck<<endl;
+	cout<<tKey<<endl<<tCheck<<endl;*/
+	cout<<t.getUsbId(Ser)<<endl;
+	cout<<Ser<<endl;
 	//cout<<t.deleteUkey()<<endl;
+
 
 	getchar();
 	return 1;

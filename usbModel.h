@@ -49,8 +49,8 @@ public:
 	//失败 < 0
 	//-1   获取设备路径出错
 	//-2   获取UKEY标识符失败
-	int getUsbId(
-		__out	char *Serial				//设备标识符
+	bool getUsbId(
+		__out	char *Serial				//设备标识符,至少256字节缓冲
 	);
 
 	//获取储存的Key
@@ -63,6 +63,7 @@ public:
 	);
 
 private:
+	char Device;				//磁盘盘符
 	UsbIo UsbIO;				//U盘读写操作
 	DWORD sector_Key,sector_CheckSum;
 
